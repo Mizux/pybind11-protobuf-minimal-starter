@@ -1,0 +1,19 @@
+# Project Files unneeded by docker
+.dockerignore
+
+.git
+.gitignore
+.github
+.clang-format
+
+README.md
+cmake/docker
+cmake/Makefile
+
+# Build
+bazel-*
+build/
+
+# Editor directories and files
+*.user
+*.swp
