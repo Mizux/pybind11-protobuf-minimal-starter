@@ -1,0 +1,19 @@
+# Enable logging rc options.
+common --announce_rc
+
+# Enable verbose failures for testing only.
+build --verbose_failures
+
+# Set the default Apple platform to macOS.
+build --apple_platform_type=macos
+
+# Print command lines for build commands.
+# build --subcommands=pretty_print
+
+# Enable logging error output.
+test --test_output=errors
+test --test_summary=detailed
+test --test_timeout_filters=-eternal
+
+# https://bazel.build/configure/best-practices#bazelrc-file
+try-import %workspace%/user.bazelrc

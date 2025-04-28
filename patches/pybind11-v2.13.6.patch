@@ -1,0 +1,20 @@
+diff --git a/tools/pybind11NewTools.cmake b/tools/pybind11NewTools.cmake
+index a8b0800..926d6e1 100644
+--- a/tools/pybind11NewTools.cmake
++++ b/tools/pybind11NewTools.cmake
+@@ -23,6 +23,7 @@ else()
+ endif()
+ 
+ if(NOT Python_FOUND AND NOT Python3_FOUND)
++  message(FATAL_ERROR "Should not pass here")
+   if(NOT DEFINED Python_FIND_IMPLEMENTATIONS)
+     set(Python_FIND_IMPLEMENTATIONS CPython PyPy)
+   endif()
+@@ -41,6 +42,7 @@ if(NOT Python_FOUND AND NOT Python3_FOUND)
+ 
+   # Development.Module support (required for manylinux) started in 3.18
+   if(CMAKE_VERSION VERSION_LESS 3.18)
++    message(FATAL_ERROR "Do not pass here !")
+     set(_pybind11_dev_component Development)
+   else()
+     set(_pybind11_dev_component Development.Module OPTIONAL_COMPONENTS Development.Embed)

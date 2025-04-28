@@ -31,7 +31,7 @@ cc_library(
 )
 
 pybind_extension(
-    name = "helloworld_pybind",
+    name = "pyhelloworld",
     srcs = ["helloworld_pybind.cpp"],
     deps = [
         ":example_cc_proto",
@@ -41,12 +41,12 @@ pybind_extension(
 )
 
 py_test(
-    name = "helloworld_py_test",
-    srcs = ["helloworld_py_test.py"],
+    name = "pyhelloworld_test",
+    srcs = ["pyhelloworld_test.py"],
     python_version = "3.12",
     deps = [
         "//:example_py_proto",
-        "//:helloworld_pybind.so",
+        "//:pyhelloworld",
         "@protobuf//:protobuf_python",  # Required for any python targets using pybind
     ],
 )
